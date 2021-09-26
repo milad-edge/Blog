@@ -1,0 +1,13 @@
+export const VIEW_POST = 'VIEW_POST'
+export const VIEW_POST_REQUEST = 'VIEW_POST_REQUEST'
+export const VIEW_UPDATE_POST = 'VIEW_UPDATE_POST'
+
+export const VIEW_SINGLE_POST = 'VIEW_SINGLE_POST'
+export const VIEW_SINGLE_POST_REQUEST = 'VIEW_SINGLE_POST_REQUEST'
+
+export const ADD_POST = 'ADD_POST'
+export const UPDATE_POST = 'UPDATE_POST'
+export const DELETE_POST = 'DELETE_POST'
+
+export const GET_PHOTO = 'GET_PHOTO'
+export const GET_PHOTO_REQUEST = 'GET_PHOTO_REQUEST'
