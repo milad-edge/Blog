@@ -2,7 +2,11 @@ import React , {useEffect}from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import ViewPost from '../components/ViewPost'
 import * as actionCreator from '../store/actionCreator'
-import {Row , Col, Space} from 'antd'
+import {Row , Col, Layout, Carousel } from 'antd'
+import TopBarProgress from 'react-topbar-progress-indicator'
+import Slider1 from '../assets/slider1.jpg'
+import Slider2 from '../assets/slider2.jpg'
+import Slider3 from '../assets/slider3.jpg'
 
 function Index() {
     const postsData = useSelector(state => ({
@@ -16,13 +20,13 @@ function Index() {
       }, [dispatch]);
     
     if(postsData.loading) {
-        return(<div>data is loading ...</div>)
+        return < TopBarProgress />
     }
     
     const viewPost = postsData.data && postsData.data.map((item, index) => {
         return (
                 <Col>
-                    <div style={{marginTop: '20px'}}>
+                    <div style={{marginBottom: '20px'}}>
                         <ViewPost
                                     post={{title: item.title , body: item.body, id:item.id}}
                                     key={index}
@@ -32,13 +36,32 @@ function Index() {
                 )
             })
 
+
     return (
-        <>
-            <Row justify="space-around">  
-                {viewPost}
-            </Row>
-  
-        </>
+        <Layout.Content>
+            <Carousel autoplay>
+                <div>
+                    <div className='sliderStyle' style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${Slider1}')`}}>
+                        <h1>The best Blog</h1>
+                    </div>
+                </div>
+                <div>
+                    <div className='sliderStyle' style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${Slider2}')`}}>
+                        <h1>Sample Project with React & Redux</h1>
+                    </div>
+                </div>
+                <div>
+                    <div className='sliderStyle' style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${Slider3}')`}}>
+                        <h1>Creative Site</h1>
+                    </div>
+                </div>
+            </Carousel>
+            <Layout.Content style={{marginTop: '30px', marginBottom: '10px'}}>
+                <Row justify="space-around">  
+                    {viewPost}
+                </Row>
+            </Layout.Content>
+        </Layout.Content>  
     )   
 }
 

@@ -19,7 +19,7 @@ function FormPost(props) {
     const handleClicked = () => {
         props.clicked(title, body)
         setTitle('');
-        setBody('')
+        setBody('');
     }
 
     return(
@@ -28,7 +28,7 @@ function FormPost(props) {
             <Form.Item label="Title" name="title">
                 <Input placeholder="Enter Your Title" onChange={handleChangeTitle} value={title}/>
             </Form.Item>
-
+ 
             <Form.Item label="Text" name="Text">
                 <Input.TextArea placeholder="Enter Your Text" onChange={handleChangeBody} value={body}/>
             </Form.Item>

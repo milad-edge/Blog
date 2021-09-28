@@ -1,0 +1,18 @@
+body {
+    background-color: #f0f2f5;
+}
+
+/* style for main slider */
+
+.sliderStyle {
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    font-size: 50px;
+}
+
+.sliderStyle h1{
+    color: #fff
+}

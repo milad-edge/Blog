@@ -19,7 +19,7 @@ const reducer = (state = initialState , action) => {
         case actions.VIEW_POST:
             return {
                 ...state,
-                posts: action.payload.slice(0, 20),
+                posts: action.payload.slice(0, 12),
                 loading: false
             }
         case actions.VIEW_UPDATE_POST:

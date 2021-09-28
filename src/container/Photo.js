@@ -2,7 +2,7 @@ import React , {useEffect}from 'react'
 import ViewPhoto from '../components/ViewPhoto'
 import { useSelector, useDispatch} from 'react-redux'
 import * as actionCreator from '../store/actionCreator'
-import {Row, Col, Image} from 'antd'
+import {Row, Col, Image, Layout} from 'antd'
 
 function Photo() {
 
@@ -20,16 +20,17 @@ function Photo() {
     }
 
     return(
-        <Row >
-            <Image.PreviewGroup>
-                {photos.photo && photos.photo.map((item, index) => (
-                    <Col span={8}>
-                        <ViewPhoto image={item.download_url} key={index} />
-                    </Col>
-                ))}
-            </Image.PreviewGroup>
-        </Row>
-
+        <Layout.Content>
+            <Row >
+                <Image.PreviewGroup>
+                    {photos.photo && photos.photo.map((item, index) => (
+                        <Col span={8}>
+                            <ViewPhoto image={item.download_url} key={index} />
+                        </Col>
+                    ))}
+                </Image.PreviewGroup>
+            </Row>
+        </Layout.Content>
     )
 }
 

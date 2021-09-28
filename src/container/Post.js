@@ -2,8 +2,7 @@ import React from 'react'
 import * as actionCreator from '../store/actionCreator'
 import FormPost from '../components/FormPost'
 import { useSelector, useDispatch } from 'react-redux'
-import ViewPost from '../components/ViewPost'
-import { Row , Col, Card } from 'antd';
+import { Row , Col, Card, Layout } from 'antd';
 
 
 function Post() {
@@ -17,14 +16,18 @@ function Post() {
     )
 
     return (
-        <Row justify="space-around" align="middle">
+        <Layout.Content style={{margin: '30px 0 162px '}}>
+            <Row justify="space-around" align="middle">
                 <Col span={12} >
                     <div style={{margin: "10px 0"}}>
+                        <Card>
                         <FormPost clicked={(title, body) => dispatch(actionCreator.addPost({posts: {title: title, body: body , userId: 1}}))}/>
+                        </Card>
                         {viewPost}
                     </div>
                 </Col>
-        </Row>
+            </Row>
+        </Layout.Content>
     )
 }
 
